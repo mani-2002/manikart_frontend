@@ -3,9 +3,6 @@ import { MDBCol } from "mdbreact";
 import "bootstrap/dist/css/bootstrap.css";
 import cart from "../images/cart.svg";
 import Dropdown from "react-bootstrap/Dropdown";
-import Button from "react-bootstrap/Button";
-import OverlayTrigger from "react-bootstrap/OverlayTrigger";
-import Tooltip from "react-bootstrap/Tooltip";
 import search from "../images/search.png";
 
 function HomeNav1() {
@@ -98,28 +95,45 @@ function HomeNav1() {
         </div>
       </div>
       <div style={{ border: "1px solid black" }}>
-        <OverlayTrigger
-          placement={"bottom"}
-          overlay={
-            <Tooltip id={`tooltip-${"Bottom"}`}>
-              Tooltip on <strong>{"Bottom"}</strong>.
-            </Tooltip>
-          }
-        >
-          <Button variant="secondary">English</Button>
-        </OverlayTrigger>
+        <Dropdown>
+          <Dropdown.Toggle
+            variant="secondary"
+            id="dropdown-basic"
+            style={{
+              borderRight: "none",
+              padding: "1vh",
+              height: "5.9vh",
+            }}
+          >
+            Select Language
+          </Dropdown.Toggle>
+
+          <Dropdown.Menu>
+            <Dropdown.Item href="#/action-1">English</Dropdown.Item>
+            <Dropdown.Item href="#/action-2">Telugu</Dropdown.Item>
+            <Dropdown.Item href="#/action-3">Francis</Dropdown.Item>
+          </Dropdown.Menu>
+        </Dropdown>
       </div>
       <div style={{ border: "1px solid black" }}>
-        <OverlayTrigger
-          placement="bottom"
-          overlay={
-            <Tooltip id="tooltip-bottom">
-              <button>ManiCart</button>
-            </Tooltip>
-          }
-        >
-          <Button variant="secondary">Hello Signin</Button>
-        </OverlayTrigger>
+        <Dropdown>
+          <Dropdown.Toggle
+            variant="secondary"
+            id="dropdown-basic"
+            style={{
+              borderRight: "none",
+              padding: "1vh",
+              height: "5.9vh",
+            }}
+          >
+            Hello Signin
+          </Dropdown.Toggle>
+          <Dropdown.Menu>
+            <Dropdown.Item href="#/action-1">English</Dropdown.Item>
+            <Dropdown.Item href="#/action-2">Telugu</Dropdown.Item>
+            <Dropdown.Item href="#/action-3">Francis</Dropdown.Item>
+          </Dropdown.Menu>
+        </Dropdown>
       </div>
       <div style={{ padding: "1vh", cursor: "pointer", color: "white" }}>
         Returns & Orders
