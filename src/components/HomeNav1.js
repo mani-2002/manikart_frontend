@@ -27,7 +27,7 @@ function HomeNav1() {
           fontFamily: "times new roman",
         }}
       >
-        ManiCart
+        Manikart
       </div>
       <div
         style={{
