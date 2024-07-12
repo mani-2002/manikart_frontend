@@ -1,12 +1,12 @@
 import React from "react";
-import Home from "./pages/Home";
+import img from "./prac.png";
 
-function App() {
+const App = () => {
   return (
     <div>
-      <Home />
+      <img src={img} alt="" />
     </div>
   );
-}
+};
 
 export default App;
