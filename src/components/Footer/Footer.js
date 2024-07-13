@@ -84,7 +84,11 @@ const Footer = () => {
                 />
               </div>
               <div>
-                <img src={user} alt="This is My portfolio icon" className="usericon"/>
+                <img
+                  src={user}
+                  alt="This is My portfolio icon"
+                  className="usericon"
+                />
               </div>
             </div>
           </div>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Navbar.css";
 import logo from "../../images/logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -12,6 +12,18 @@ const Navbar = () => {
   const toggleShowMenu = () => {
     setShowMenu(!showMenu);
   };
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 1069) {
+        setShowMenu(false);
+      }
+    };
+    window.addEventListener("resize", handleResize);
+    handleResize();
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   const handleBtnClick = () => {
     setShowMenu(false);
   };
@@ -38,7 +50,7 @@ const Navbar = () => {
             <FontAwesomeIcon icon={faMagnifyingGlass} />
           </button>
         </div>
-        <div className="navbardivright">
+        <div className="navbardivright" id="nbdr">
           <div>
             <Link to="/" className="btn" id="navbarbtns">
               Home
@@ -70,7 +82,7 @@ const Navbar = () => {
             </Link>
           </div>
         </div>
-        <div className="navbarright-ellipses">
+        <div className="navbarright-ellipses" id="nbdre">
           <button
             onClick={toggleShowMenu}
             className="btn"
