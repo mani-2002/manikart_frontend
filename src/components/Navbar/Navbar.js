@@ -27,8 +27,7 @@ const Navbar = () => {
             </Link>
           </div>
           <div style={{ color: "white" }} className="sgnAndReg">
-            <button className="btn btn-primary m-1">Sign In</button>
-            <button className="btn btn-success m-1">Register</button>
+            <button className="btn btn-primary m-2">Sign In</button>
           </div>
         </div>
         <div className="navBarLocation">
@@ -93,9 +92,6 @@ const Navbar = () => {
           <div className="navBarRightSignin">
             <button className="btn btn-primary">Signin</button>
           </div>
-          <div className="navBarRightRegister">
-            <button className="btn btn-success">Register</button>
-          </div>
           <div className="navBarRightRetOrd">
             <Link to="/" className="btn">
               Returns & Orders
@@ -113,6 +109,11 @@ const Navbar = () => {
           </div>
         </div>
         <div className="navBarRightEllipsis">
+          <div className="ellipsisSignIn">
+            <button className="btn btn-primary" style={{ fontSize: "15px" }}>
+              Sign In
+            </button>
+          </div>
           <button className="btn">
             <FontAwesomeIcon icon={faBars} style={{ color: "#ffffff" }} />
           </button>
