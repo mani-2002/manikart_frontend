@@ -17,9 +17,19 @@ const Navbar = () => {
     <>
       <div className="navBarTotal">
         <div className="navBarLogo">
-          <Link to="/" className="btn">
-            <img src={logo} alt="This is the Logo" className="navBarLogoImg" />
-          </Link>
+          <div className="navBarImgDiv">
+            <Link to="/" className="btn">
+              <img
+                src={logo}
+                alt="This is the Logo"
+                className="navBarLogoImg"
+              />
+            </Link>
+          </div>
+          <div style={{ color: "white" }} className="sgnAndReg">
+            <button className="btn btn-primary m-1">Sign In</button>
+            <button className="btn btn-success m-1">Register</button>
+          </div>
         </div>
         <div className="navBarLocation">
           <Link className="btn">
