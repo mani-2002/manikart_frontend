@@ -1,0 +1,164 @@
+.navbartotal{
+    display: flex;
+    background-color:aliceblue;
+    width: 100%;
+}
+.navbardivleft{
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.navbardivmiddle{
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+.navbardivright{
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.navbarright-ellipses{
+    display: none;
+    align-items: center;
+    justify-content: right;
+    margin: 5vh;
+    width: 40%;
+}
+.logoimg{
+    width: 120px;
+    height: 80px;
+}
+#navbarsearchinput{
+    width: 50vh;
+    border: 1px solid black;
+    border-radius: 10px 0px 0px 10px;
+}
+#navbarsearchicon{
+    border-radius: 0px 10px 10px 0px;
+    border: 1px solid black;
+}
+#navbarbtns{
+    font-weight: bold;
+    font-size: 3vh;
+}
+@media (min-width: 1070px) and (max-width:1365px){
+    .navbardivleft{
+        width: 15%;
+    }
+    .navbardivmiddle{
+        width: 35%;
+    }
+    .navbardivright{
+        width: 50%;
+    }
+}
+@media (min-width:768px) and (max-width:1069px){
+    .navbardivleft{
+        width: 35%;
+    }
+    .navbardivmiddle{
+        width: 55%;
+    }
+    .navbardivright{
+        width: 10%;
+        display: none;
+    }
+    .navbarright-ellipses{
+        width: 10%;
+        display: flex;
+    }
+    .menu-icon{
+        width: 2vh;
+        height: 1.5vh;
+    }
+}
+@media(min-width:496px) and (max-width:767px){
+    .navbarright-ellipses{
+        display: flex;
+        width: 10%;
+    }
+    .navbardivright{
+        display: none;
+        width: 10%;
+    }
+    .navbardivleft{
+        width: 35%;
+    }
+    .navbardivmiddle{
+        width: 55%;
+    }
+    .menu-icon{
+        width: 2vh;
+        height: 1.5vh;
+    }
+}
+@media(min-width:320px) and (max-width:495px){
+    .navbartotal{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 1.5vh;
+    }
+    .navbardivright{
+        display: none;
+    }
+    .navbarright-ellipses{
+        display: flex;
+        width: 98.5%;
+        justify-content: center;
+        margin: 2vh 0;
+    }
+    .navbardivleft{
+        width: 98.5%;
+    }
+    .navbardivmiddle{
+        width: 98.5%;
+        display: flex;
+        justify-content: center;
+    }
+    .menu-icon{
+        width: 2vh;
+        height: 1.5vh;
+    }
+}
+#hamburger-menu-btn{
+    background-color: white;
+}
+.showmenuul{
+    list-style-type: none;
+    background-color: black;
+    margin: 0;
+    padding: 0;
+}
+.navlinks{
+    text-decoration: none;
+    font-size: 10px;
+    cursor: pointer;
+    color: white;
+}
+#menubtn{
+    color: white;
+    border-bottom: 1px solid white;
+    border-radius: 0;
+}
+.categorymenudiv{
+    color: white;
+    background-color:grey;
+    margin: 0 5px;
+}
+.categorymenuul{
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+
+}
+.categorymenuli{
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+}

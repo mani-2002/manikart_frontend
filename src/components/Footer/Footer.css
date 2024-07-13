@@ -1,0 +1,44 @@
+.totaldiv{
+    display: flex;
+    flex-direction: column;
+}
+.footertopdiv{
+    background-color:aliceblue;
+}
+.footerbottomdiv{
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.footerbottomdiv1{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.footerbottomanchor1{
+    margin-right: 2vh;
+    color: white;
+    text-decoration: none;
+}
+.footerbottomanchor2{
+    margin-left: 2vh;
+    color: white;
+    text-decoration: none;
+}
+.footerbottomdiv2{
+    color: white;
+}
+.footerimg{
+    height: 100px;
+    width: 120px;
+    background-color:aliceblue;
+}
+.footertopdiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
