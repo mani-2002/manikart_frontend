@@ -1,167 +1,113 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./Navbar.css";
 import logo from "../../images/logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
-import menuIcon from "../../images/menu-icon.png";
-import { Link } from "react-router-dom";
+import {
+  faLocationCrosshairs,
+  faMagnifyingGlass,
+  faGlobe,
+  faCartShopping,
+  faBars,
+} from "@fortawesome/free-solid-svg-icons";
+import { BrowserRouter as Link } from "react-router-dom";
 import Dropdown from "react-bootstrap/Dropdown";
 
 const Navbar = () => {
-  const [showMenu, setShowMenu] = useState(false);
-  const toggleShowMenu = () => {
-    setShowMenu(!showMenu);
-  };
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth > 1069) {
-        setShowMenu(false);
-      }
-    };
-    window.addEventListener("resize", handleResize);
-    handleResize();
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-  const handleBtnClick = () => {
-    setShowMenu(false);
-  };
-  const [categoryMenu, setCategoryMenu] = useState(false);
-  const toggleCategoryMenu = () => {
-    setCategoryMenu(!categoryMenu);
-  };
   return (
     <>
-      <div className="navbartotal">
-        <div className="navbardivleft">
+      <div className="navBarTotal">
+        <div className="navBarLogo">
           <Link to="/" className="btn">
-            <img src={logo} alt="This is the logo" className="logoimg" />
+            <img src={logo} alt="This is the Logo" className="navBarLogoImg" />
           </Link>
         </div>
-        <div className="navbardivmiddle">
+        <div className="navBarLocation">
+          <Link className="btn">
+            <div className="locSymbol">
+              <FontAwesomeIcon
+                icon={faLocationCrosshairs}
+                style={{ color: "#ffffff" }}
+              />
+            </div>
+            <div className="detLoc">Update Your Location</div>
+          </Link>
+        </div>
+        <div className="navBarSearch">
+          <Dropdown>
+            <Dropdown.Toggle variant="success" id="dropdown-basic">
+              All
+            </Dropdown.Toggle>
+            <Dropdown.Menu>
+              <Dropdown.Item href="/">Grocery</Dropdown.Item>
+              <Dropdown.Item href="/">Electronics</Dropdown.Item>
+              <Dropdown.Item href="/">Fashion</Dropdown.Item>
+              <Dropdown.Item href="/">Home & Furniture</Dropdown.Item>
+              <Dropdown.Item href="/">Travel</Dropdown.Item>
+              <Dropdown.Item href="/">Beauty</Dropdown.Item>
+              <Dropdown.Item href="/">Books</Dropdown.Item>
+              <Dropdown.Item href="/">Stationery</Dropdown.Item>
+              <Dropdown.Item href="/">Baby Care</Dropdown.Item>
+              <Dropdown.Item href="/">Sports & Fitness</Dropdown.Item>
+              <Dropdown.Item href="/">Foods & Drinks</Dropdown.Item>
+              <Dropdown.Item href="/">Vehicles</Dropdown.Item>
+              <Dropdown.Item href="/">Toys</Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
           <input
             type="text"
+            placeholder="Type anything to Search..."
             className="form-control"
-            id="navbarsearchinput"
-            placeholder="Type anything to search..."
+            id="searchBar"
           />
-          <button className="btn btn-primary" id="navbarsearchicon">
-            <FontAwesomeIcon icon={faMagnifyingGlass} />
-          </button>
-        </div>
-        <div className="navbardivright" id="nbdr">
-          <div>
-            <Link to="/" className="btn" id="navbarbtns">
-              Home
-            </Link>
-          </div>
-          <div>
-            <Dropdown>
-              <Dropdown.Toggle variant="success" id="dropdown-basic">
-                Categories
-              </Dropdown.Toggle>
-              <Dropdown.Menu>
-                <Dropdown.Item href="/">Category 1</Dropdown.Item>
-                <Dropdown.Item href="/">Category 2</Dropdown.Item>
-                <Dropdown.Item href="/">Category 3</Dropdown.Item>
-                <Dropdown.Item href="/">Category 4</Dropdown.Item>
-                <Dropdown.Item href="/">Category 5</Dropdown.Item>
-                <Dropdown.Item href="/">Category 6</Dropdown.Item>
-              </Dropdown.Menu>
-            </Dropdown>
-          </div>
-          <div>
-            <Link to="/about-us" className="btn" id="navbarbtns">
-              About us
-            </Link>
-          </div>
-          <div>
-            <Link to="/contact-us" className="btn" id="navbarbtns">
-              Contact us
-            </Link>
-          </div>
-        </div>
-        <div className="navbarright-ellipses" id="nbdre">
-          <button
-            onClick={toggleShowMenu}
-            className="btn"
-            id="hamburger-menu-btn"
-          >
-            <img
-              src={menuIcon}
-              alt="Hamburger menu icon"
-              className="menu-icon"
+          <button className="btn btn-danger" id="searchIcon">
+            <FontAwesomeIcon
+              icon={faMagnifyingGlass}
+              style={{ color: "#ffffff" }}
             />
           </button>
         </div>
-      </div>
-      {showMenu && (
-        <div>
-          <ul className="showmenuul">
-            <Link to="/" className="navlinks" id="navbarbtns">
-              <button
-                className="btn w-100"
-                id="menubtn"
-                onClick={handleBtnClick}
-              >
-                Home
-              </button>
+        <div className="navBarRight">
+          <div className="navBarRightLang">
+            <Dropdown>
+              <Dropdown.Toggle variant="success" id="dropdown-lang">
+                <FontAwesomeIcon icon={faGlobe} style={{ color: "#ffffff" }} />{" "}
+                EN
+              </Dropdown.Toggle>
+              <Dropdown.Menu>
+                <Dropdown.Item href="/">English</Dropdown.Item>
+                <Dropdown.Item href="/">Hindi</Dropdown.Item>
+                <Dropdown.Item href="/">Telugu</Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
+          </div>
+          <div className="navBarRightSignin">
+            <button className="btn btn-primary">Signin</button>
+          </div>
+          <div className="navBarRightRegister">
+            <button className="btn btn-success">Register</button>
+          </div>
+          <div className="navBarRightRetOrd">
+            <Link to="/" className="btn">
+              Returns & Orders
             </Link>
-            <Link className="navlinks" id="navbarbtns">
-              <button
-                className="btn w-100"
-                id="menubtn"
-                onClick={toggleCategoryMenu}
-              >
-                Categories
-              </button>
-            </Link>
-            {categoryMenu && (
-              <div className="categorymenudiv">
-                <ul className="categorymenuul">
-                  <li className="categorymenuli">
-                    <Link className="btn w-100">Category 1</Link>
-                  </li>
-                  <li className="categorymenuli">
-                    <Link className="btn w-100">Category 2</Link>
-                  </li>
-                  <li className="categorymenuli">
-                    <Link className="btn w-100">Category 3</Link>
-                  </li>
-                  <li className="categorymenuli">
-                    <Link className="btn w-100">Category 4</Link>
-                  </li>
-                  <li className="categorymenuli">
-                    <Link className="btn w-100">Category 5</Link>
-                  </li>
-                  <li className="categorymenuli">
-                    <Link className="btn w-100">Category 6</Link>
-                  </li>
-                </ul>
-              </div>
-            )}
-            <Link to="/about-us" className="navlinks" id="navbarbtns">
-              <button
-                className="btn w-100"
-                id="menubtn"
-                onClick={handleBtnClick}
-              >
-                About us
-              </button>
-            </Link>
-            <Link to="/contact-us" className="navlinks" id="navbarbtns">
-              <button
-                className="btn w-100"
-                id="menubtn"
-                onClick={handleBtnClick}
-              >
-                Contact us
-              </button>
-            </Link>
-          </ul>
+          </div>
+          <div className="navBarRightCart">
+            <div>0</div>
+            <div>
+              <FontAwesomeIcon
+                icon={faCartShopping}
+                style={{ color: "#ffffff" }}
+                size="xl"
+              />
+            </div>
+          </div>
         </div>
-      )}
+        <div className="navBarRightEllipsis">
+          <button className="btn">
+            <FontAwesomeIcon icon={faBars} style={{ color: "#ffffff" }} />
+          </button>
+        </div>
+      </div>
     </>
   );
 };
