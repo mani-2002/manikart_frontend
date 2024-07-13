@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Footer.css";
 import { Link } from "react-router-dom";
 import logo from "../../images/logo.png";
@@ -13,6 +13,12 @@ import {
 import user from "../../images/user.png";
 
 const Footer = () => {
+  const date = new Date();
+  const year = date.getFullYear();
+  const [yr, setYr] = useState();
+  useEffect(() => {
+    setYr(year);
+  }, [year]);
   return (
     <div className="totaldiv">
       <div className="footertopdiv">
@@ -104,7 +110,7 @@ const Footer = () => {
           </a>
         </div>
         <div className="footerbottomdiv2">
-          © 2002-2024, Manikart.vercel.app, Inc.
+          © 2002-{yr}, Manikart.vercel.app, Inc.
         </div>
       </div>
     </div>
