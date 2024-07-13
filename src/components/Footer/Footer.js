@@ -16,7 +16,7 @@ const Footer = () => {
   return (
     <div className="totaldiv">
       <div className="footertopdiv">
-        <Link to="/">
+        <Link to="/" className="btn">
           <img src={logo} alt="This is the logo" className="footerimg" />
         </Link>
         <div className="footertopdivb">
