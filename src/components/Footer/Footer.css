@@ -36,9 +36,92 @@
     height: 80px;
     width: 120px;
     background-color:aliceblue;
+    margin-bottom: 2vh;
 }
 .footertopdiv{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+}
+.footertopdivb{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-around;
+    margin-bottom: 2vh;
+}
+.div1{
+    border: 1px solid black;
+    width: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: black;
+    border-radius: 10px;
+    margin: 10px 0;
+    height: 205px;
+}
+.div2{
+    border: 1px solid black;
+    width: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: black;
+    border-radius: 10px;
+    color: white;
+    margin: 10px 0;
+    height: 205px;
+    font-size: 13px;
+}
+.div3{
+    border: 1px solid black;
+    width: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: black;
+    border-radius: 10px;
+    color: white;
+    margin: 10px 0;
+    height: 205px;
+}
+.div4{
+    border: 1px solid black;
+    width: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: black;
+    border-radius: 10px;
+    margin: 10px 0;
+    height: 205px;
+}
+.cardhead{
+    font-weight: bold;
+    text-decoration: underline;
+    color: red;
+    font-size: 18px;
+}
+.cardul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    padding-bottom: 1vh;
+    color: white;
+
+}
+.socialicons{
+    display:flex ;
+    width: 180px;
+    justify-content: space-around;
+}
+.usericon{
+    width: 13px;
+    height: 13px;
 }
