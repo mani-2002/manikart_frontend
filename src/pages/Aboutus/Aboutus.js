@@ -1,9 +1,7 @@
-import React from 'react'
-
+import React from "react";
+import "./Aboutus.css";
 const Aboutus = () => {
-  return (
-    <div>Aboutus</div>
-  )
-}
+  return <div>Aboutus</div>;
+};
 
-export default Aboutus
+export default Aboutus;

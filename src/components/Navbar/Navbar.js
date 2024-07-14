@@ -10,7 +10,7 @@ import {
   faBars,
   faCaretDown,
 } from "@fortawesome/free-solid-svg-icons";
-import { BrowserRouter as Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Dropdown from "react-bootstrap/Dropdown";
 
 const Navbar = () => {
@@ -89,12 +89,14 @@ const Navbar = () => {
             className="form-control"
             id="searchBar"
           />
-          <button className="btn btn-danger" id="searchIcon">
-            <FontAwesomeIcon
-              icon={faMagnifyingGlass}
-              style={{ color: "#ffffff" }}
-            />
-          </button>
+          <Link to="/search">
+            <button className="btn btn-danger" id="searchIcon">
+              <FontAwesomeIcon
+                icon={faMagnifyingGlass}
+                style={{ color: "#ffffff" }}
+              />
+            </button>
+          </Link>
         </div>
         <div className="navBarRight">
           <div className="navBarRightLang">
@@ -115,22 +117,26 @@ const Navbar = () => {
             </Dropdown>
           </div>
           <div className="navBarRightSignin">
-            <button className="btn btn-primary">Signin</button>
+            <Link to="/signin-register">
+              <button className="btn btn-primary">Signin</button>
+            </Link>
           </div>
           <div className="navBarRightRetOrd">
-            <Link to="/" className="btn">
+            <Link to="/ret-ords" className="btn" id="navBarRightRetOrd">
               Returns & Orders
             </Link>
           </div>
           <div className="navBarRightCart">
-            <div>0</div>
-            <div>
-              <FontAwesomeIcon
-                icon={faCartShopping}
-                style={{ color: "#ffffff" }}
-                size="xl"
-              />
-            </div>
+            <Link to="/cart" id="navBarRightCart">
+              <div>0</div>
+              <div>
+                <FontAwesomeIcon
+                  icon={faCartShopping}
+                  style={{ color: "#ffffff" }}
+                  size="xl"
+                />
+              </div>
+            </Link>
           </div>
         </div>
         <div className="navBarRightEllipsis">

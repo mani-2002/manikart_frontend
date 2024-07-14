@@ -72,9 +72,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
     text-align: center;
     cursor: pointer;
+}
+#navBarRightRetOrd{
+    color: white;
 }
 .navBarRightCart{
     width: 20%;
@@ -84,6 +86,14 @@
     flex-direction: column;
     color: white;
     cursor: pointer;
+}
+#navBarRightCart{
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
 }
 .navBarRightEllipsis{
     width: 45%;
