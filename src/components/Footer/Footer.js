@@ -36,9 +36,21 @@ const Footer = () => {
           <div className="footerDivTop2">
             <div className="footerCards">
               <p className="cardHeads">Get to Know us</p>
-              <div>About us</div>
-              <div>Careers</div>
-              <div>Press Releases</div>
+              <div>
+                <Link to="/about-us" className="btn" id="footerBtns">
+                  About us
+                </Link>
+              </div>
+              <div>
+                <Link to="/careers" className="btn" id="footerBtns">
+                  Careers
+                </Link>
+              </div>
+              <div>
+                <Link to="/press-releases" className="btn" id="footerBtns">
+                  Press Releases
+                </Link>
+              </div>
             </div>
             <div className="footerCards">
               <p className="cardHeads">About us</p>
@@ -51,59 +63,92 @@ const Footer = () => {
               <p className="cardHeads">Connect with us</p>
               <div className="socialIcons">
                 <div>
-                  <FontAwesomeIcon
-                    icon={faFacebook}
-                    beat
-                    style={{ color: "#ffffff" }}
-                  />
+                  <a
+                    href="https://www.facebook.com/profile.php?id=100070240689131"
+                    target="._blank"
+                  >
+                    <FontAwesomeIcon
+                      icon={faFacebook}
+                      beat
+                      style={{ color: "#ffffff" }}
+                    />
+                  </a>
                 </div>
                 <div>
-                  <FontAwesomeIcon
-                    icon={faInstagram}
-                    spinPulse
-                    style={{ color: "#ffffff" }}
-                  />
+                  <a
+                    href="https://www.instagram.com/_m_a_n_i_2002_/"
+                    target="._blank"
+                  >
+                    <FontAwesomeIcon
+                      icon={faInstagram}
+                      spinPulse
+                      style={{ color: "#ffffff" }}
+                    />
+                  </a>
                 </div>
                 <div>
-                  <FontAwesomeIcon
-                    icon={faWhatsapp}
-                    shake
-                    style={{ color: "#ffffff" }}
-                  />
+                  <a
+                    href="https://api.whatsapp.com/send?phone=8522845343"
+                    target="._blank"
+                  >
+                    <FontAwesomeIcon
+                      icon={faWhatsapp}
+                      shake
+                      style={{ color: "#ffffff" }}
+                    />
+                  </a>
                 </div>
                 <div>
-                  <FontAwesomeIcon
-                    icon={faTelegram}
-                    bounce
-                    style={{ color: "#ffffff" }}
-                  />
+                  <a href="https://t.me/mani_2_0_0_2" target="._blank">
+                    <FontAwesomeIcon
+                      icon={faTelegram}
+                      bounce
+                      style={{ color: "#ffffff" }}
+                    />
+                  </a>
                 </div>
                 <div>
-                  <FontAwesomeIcon
-                    icon={faXTwitter}
-                    spin
-                    style={{ color: "#ffffff" }}
-                  />
+                  <a
+                    href="https://twitter.com/MANIKANTAV91524"
+                    target="._blank"
+                  >
+                    <FontAwesomeIcon
+                      icon={faXTwitter}
+                      spin
+                      style={{ color: "#ffffff" }}
+                    />
+                  </a>
                 </div>
                 <div>
-                  <FontAwesomeIcon
-                    icon={faUser}
-                    flip
-                    style={{ color: "#ffffff" }}
-                  />
+                  <a href="https://maniportf.vercel.app/" target="._blank">
+                    <FontAwesomeIcon
+                      icon={faUser}
+                      flip
+                      style={{ color: "#ffffff" }}
+                    />
+                  </a>
                 </div>
                 <div>
-                  <FontAwesomeIcon
-                    icon={faLinkedin}
-                    beatFade
-                    style={{ color: "#ffffff" }}
-                  />
+                  <a
+                    href="https://www.linkedin.com/in/manikanta-vinjamuri-57827a239/"
+                    target="._blank"
+                  >
+                    <FontAwesomeIcon
+                      icon={faLinkedin}
+                      beatFade
+                      style={{ color: "#ffffff" }}
+                    />
+                  </a>
                 </div>
               </div>
             </div>
             <div className="footerCards">
               <p className="cardHeads">Contact Support</p>
-              <div>Raise Ticket</div>
+              <div>
+                <Link to="/raise-ticket" id="footerBtns" className="btn">
+                  Raise Ticket
+                </Link>
+              </div>
             </div>
           </div>
         </div>

@@ -11,6 +11,10 @@ import Footer from "./components/Footer/Footer";
 import TermsAndConditions from "./pages/TermsAndConditions/TermsAndConditions";
 import PrivacyPolicy from "./pages/PrivacyPolicy/PrivacyPolicy";
 import "./App.css";
+import Aboutus from "./pages/Aboutus/Aboutus";
+import Careers from "./pages/Careers/Careers";
+import PressReleases from "./pages/PressReleases/PressReleases";
+import RaiseTicket from "./pages/RaiseTicket/RaiseTicket";
 
 const App = () => {
   return (
@@ -28,6 +32,10 @@ const App = () => {
             element={<TermsAndConditions />}
           />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/about-us" element={<Aboutus />} />
+          <Route path="/careers" element={<Careers />} />
+          <Route path="/press-releases" element={<PressReleases />} />
+          <Route path="/raise-ticket" element={<RaiseTicket />} />
         </Routes>
         <Footer />
       </div>
