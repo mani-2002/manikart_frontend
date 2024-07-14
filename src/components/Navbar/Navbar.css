@@ -129,6 +129,9 @@
         width: 100%;
         justify-content: center;
     }
+    #faBarsIcon{
+        width: 100%;
+    }
     .navBarLocation{
         display: flex;
         width: 100%;
@@ -159,4 +162,33 @@
     .ellipsisSignIn{
         display: none;
     }
+}
+.showMenuUl{
+    padding: 0;
+    margin: 0;
+    background-color: grey;
+}
+.showMenuLi{
+    color: white;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+#showMenuBtns{
+    color: white;
+    border-bottom: 1px solid white;
+    border-radius: 0 0 0 0;
+}
+.langDivDropDown{
+    width: 100%;
+}
+.langDropDownUl{
+    padding: 0;
+    margin: 0 4px;
+    background-color: aliceblue;
+}
+#langDdBtns{
+    color: black;
+    border-bottom: 1px solid black;
+    border-radius: 0 0 0 0;
 }

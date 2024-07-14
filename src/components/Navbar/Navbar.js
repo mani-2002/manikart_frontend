@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Navbar.css";
 import logo from "../../images/logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -8,11 +8,32 @@ import {
   faGlobe,
   faCartShopping,
   faBars,
+  faCaretDown,
 } from "@fortawesome/free-solid-svg-icons";
 import { BrowserRouter as Link } from "react-router-dom";
 import Dropdown from "react-bootstrap/Dropdown";
 
 const Navbar = () => {
+  const [showMenu, setShowMenu] = useState(false);
+  const toggleShowMenu = () => {
+    setShowMenu(!showMenu);
+  };
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 768) {
+        setShowMenu(false);
+      }
+    };
+    window.addEventListener("resize", handleResize);
+    handleResize();
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+  const [langMenu, setLangMenu] = useState(false);
+  const toggleLangMenu = () => {
+    setLangMenu(!langMenu);
+  };
   return (
     <>
       <div className="navBarTotal">
@@ -83,9 +104,13 @@ const Navbar = () => {
                 EN
               </Dropdown.Toggle>
               <Dropdown.Menu>
-                <Dropdown.Item href="/">English</Dropdown.Item>
-                <Dropdown.Item href="/">Hindi</Dropdown.Item>
-                <Dropdown.Item href="/">Telugu</Dropdown.Item>
+                <Dropdown.Item href="/">HI</Dropdown.Item>
+                <Dropdown.Item href="/">TA</Dropdown.Item>
+                <Dropdown.Item href="/">TE</Dropdown.Item>
+                <Dropdown.Item href="/">KN</Dropdown.Item>
+                <Dropdown.Item href="/">ML</Dropdown.Item>
+                <Dropdown.Item href="/">BN</Dropdown.Item>
+                <Dropdown.Item href="/">MR</Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
           </div>
@@ -114,11 +139,84 @@ const Navbar = () => {
               Sign In
             </button>
           </div>
-          <button className="btn">
+          <button className="btn" onClick={toggleShowMenu} id="faBarsIcon">
             <FontAwesomeIcon icon={faBars} style={{ color: "#ffffff" }} />
           </button>
         </div>
       </div>
+      {showMenu && (
+        <div className="showMenuDiv">
+          <ul className="showMenuUl">
+            <li className="showMenuLi">
+              <div className="langDivDropDown" onClick={toggleLangMenu}>
+                <button className="btn w-100" id="showMenuBtns">
+                  <FontAwesomeIcon
+                    icon={faGlobe}
+                    style={{ color: "#ffffff" }}
+                  />{" "}
+                  EN{" "}
+                  {langMenu ? (
+                    <FontAwesomeIcon icon={faCaretDown} flip="vertical" />
+                  ) : (
+                    <FontAwesomeIcon icon={faCaretDown} />
+                  )}
+                </button>
+              </div>
+              {langMenu && (
+                <div className="langDropDownDiv">
+                  <ul className="langDropDownUl">
+                    <li className="langDropDownLi">
+                      <button className="btn w-100" id="langDdBtns">
+                        HI
+                      </button>
+                    </li>
+                    <li className="langDropDownLi">
+                      <button className="btn w-100" id="langDdBtns">
+                        TA
+                      </button>
+                    </li>
+                    <li className="langDropDownLi">
+                      <button className="btn w-100" id="langDdBtns">
+                        TE
+                      </button>
+                    </li>
+                    <li className="langDropDownLi">
+                      <button className="btn w-100" id="langDdBtns">
+                        KN
+                      </button>
+                    </li>
+                    <li className="langDropDownLi">
+                      <button className="btn w-100" id="langDdBtns">
+                        ML
+                      </button>
+                    </li>
+                    <li className="langDropDownLi">
+                      <button className="btn w-100" id="langDdBtns">
+                        BN
+                      </button>
+                    </li>
+                    <li className="langDropDownLi">
+                      <button className="btn w-100" id="langDdBtns">
+                        MR
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+              )}
+            </li>
+            <li className="showMenuLi">
+              <button className="btn w-100" id="showMenuBtns">
+                Returns & Orders
+              </button>
+            </li>
+            <li className="showMenuLi">
+              <button className="btn w-100" id="showMenuBtns">
+                Cart
+              </button>
+            </li>
+          </ul>
+        </div>
+      )}
     </>
   );
 };
