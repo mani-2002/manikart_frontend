@@ -48,7 +48,9 @@ const Navbar = () => {
             </Link>
           </div>
           <div style={{ color: "white" }} className="sgnAndReg">
-            <button className="btn btn-primary m-2">Sign In</button>
+            <Link to="/signin-register" className="btn btn-primary m-2">
+              Sign In
+            </Link>
           </div>
         </div>
         <div className="navBarLocation">
@@ -141,9 +143,13 @@ const Navbar = () => {
         </div>
         <div className="navBarRightEllipsis">
           <div className="ellipsisSignIn">
-            <button className="btn btn-primary" style={{ fontSize: "15px" }}>
+            <Link
+              to="/signin-register"
+              className="btn btn-primary"
+              style={{ fontSize: "15px" }}
+            >
               Sign In
-            </button>
+            </Link>
           </div>
           <button className="btn" onClick={toggleShowMenu} id="faBarsIcon">
             <FontAwesomeIcon icon={faBars} style={{ color: "#ffffff" }} />
